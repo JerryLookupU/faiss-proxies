@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "utils/heartbeat";
+
+package heartbeat;
+
+service Heartbeat {
+  rpc Beat (BeatRequest) returns (BeatResponse) {}
+}
+
+message BeatRequest {
+  string params = 1;
+}
+
+message BeatResponse {
+  int32 code = 1;
+  string result = 2;
+}
